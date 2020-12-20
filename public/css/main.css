@@ -7,22 +7,9 @@ canvas{
     display: block;
     margin-right: auto;
     margin-left: auto;
+    width: 400px;
+    height:600px;
+    border: 1px #33FF00 solid;
 }
 
-#hiddenCanvas{
-    display: none;
-    border: 1px saddlebrown solid;
-}
-#homeHeader{
-    height: 100px;
-    font-size: 32px;
-}
-#sliders{
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid mintcream;
-}
 
-input{
-
-}
