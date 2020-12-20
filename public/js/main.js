@@ -16,14 +16,10 @@ let hiddenCanvas = new Canvas('#hiddenCanvas', width, height)
 let x = 600
 
 setInterval(()=>{
-    hiddenCanvas.ctx.drawImage(me, 0, x, width, height)
+    hiddenCanvas.ctx.drawImage(me, 0, 0, width, height)
     let noise = new NoiseGenerator(hiddenCanvas.ctx.getImageData(0,0,width,height))
     homeCanvas.ctx.putImageData(noise.randomAlpha(), 0,0)
-    homeCanvas.ctx.drawImage(img, 0, x, width, height)
-    if(x >= 0){
-        console.log(x)
-        x-=2
-    }
+    homeCanvas.ctx.drawImage(img, 0, 0, width, height)
 
 }, 10)
 
