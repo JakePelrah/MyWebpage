@@ -13,13 +13,19 @@ let height = img.height/2
 
 let homeCanvas = new Canvas('#homeCanvas', width, height)
 let hiddenCanvas = new Canvas('#hiddenCanvas', width, height)
+let x = 600
 
-homeCanvas.canvas.addEventListener('mousemove', (event) => {
-    hiddenCanvas.ctx.drawImage(me, 0, 0, width, height)
+setInterval(()=>{
+    hiddenCanvas.ctx.drawImage(me, 0, x, width, height)
     let noise = new NoiseGenerator(hiddenCanvas.ctx.getImageData(0,0,width,height))
     homeCanvas.ctx.putImageData(noise.randomAlpha(), 0,0)
-    homeCanvas.ctx.drawImage(img, 0, 0, width, height)
-})
+    homeCanvas.ctx.drawImage(img, 0, x, width, height)
+    if(x >= 0){
+        console.log(x)
+        x-=2
+    }
+
+}, 10)
 
 
 
