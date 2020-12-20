@@ -1,79 +1,26 @@
-class MyCanvas {
-    _canvas
-    _context
-    constructor(canvasID, width, height) {
-        this._canvas = document.querySelector(canvasID)
-        this._canvas.width = width
-        this._canvas.height = height
-        if (this._canvas.getContext) {
-            this._context = this._canvas.getContext('2d')
-        }
-    }
-    get canvas() {
-        return this._canvas;
-    }
-    get context() {
-        return this._context;
-    }
-}
+import NoiseGenerator from '../js/NoiseGenerator.js'
+import Canvas from '../js/Canvas.js'
 
-
-/**
- * NoiseGenerator -
- */
-class NoiseGenerator {
-    imageData
-    constructor(imageData) {
-        this.imageData = imageData
-    }
-
-    tinted(rgba) {
-        for (let i = 0; i < this.imageData.data.length; i += 4) {
-            this.imageData.data[i] = rgba.r
-            this.imageData.data[i + 1] = rgba.g
-            this.imageData.data[i + 2] = rgba.b
-            this.imageData.data[i + 3] = getRandomInt(0,255)
-        }
-        return this.imageData
-    }
-
-    random(){
-        for (let i = 0; i < this.imageData.data.length; i += 4) {
-            this.imageData.data[i] = getRandomInt(0, 255)
-            this.imageData.data[i + 1] = getRandomInt(0, 255)
-            this.imageData.data[i + 2] = getRandomInt(0, 255)
-            this.imageData.data[i + 3] = getRandomInt(0, 255)
-        }
-        return this.imageData
-    }
-}
-
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
-
-
-
-let myCanvas = new MyCanvas('#homeCanvas', 400, 600)
-let noise = new NoiseGenerator(myCanvas.context.getImageData(0, 0, 60, 60))
 let img = new Image()
 img.src = 'images/svg/Pelrah_Jake.svg'
+let me = new Image()
+me.src = 'images/jpeg/me.jpeg'
+
+let width = img.width/2
+let height = img.height/2
 
 
 
+let homeCanvas = new Canvas('#homeCanvas', width, height)
+let hiddenCanvas = new Canvas('#hiddenCanvas', width, height)
 
-myCanvas.canvas.addEventListener('mousemove', (event) => {
-    let rect = myCanvas.canvas.getBoundingClientRect()
-    let x = event.clientX - rect.x
-    let y = event.clientY - rect.y
-    myCanvas.context.putImageData(noise.tinted({r:245, g:255, b:250}), x-30,y-30)
-    myCanvas.context.drawImage(img, 0, 0, 400, 600)
-
-
+homeCanvas.canvas.addEventListener('mousemove', (event) => {
+    hiddenCanvas.ctx.drawImage(me, 0, 0, width, height)
+    let noise = new NoiseGenerator(hiddenCanvas.ctx.getImageData(0,0,width,height))
+    homeCanvas.ctx.putImageData(noise.randomAlpha(), 0,0)
+    homeCanvas.ctx.drawImage(img, 0, 0, width, height)
 })
+
+
+
 
