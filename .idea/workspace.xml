@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Updates">
+    <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Cursor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/jpeg/me.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/jpeg/me.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/svg/Moon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/svg/Pelrah_Jake.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/svg/me.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/svg/Tux.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Cursor.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +91,8 @@
       <workItem from="1608491941842" duration="5135000" />
       <workItem from="1608502766187" duration="1155000" />
       <workItem from="1608504375501" duration="8573000" />
-      <workItem from="1608513025385" duration="2351000" />
+      <workItem from="1608513025385" duration="2373000" />
+      <workItem from="1608525363454" duration="615000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>
@@ -121,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608444904133</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cursor">
+      <created>1608515396860</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608515396860</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +142,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="Cursor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cursor" />
   </component>
 </project>

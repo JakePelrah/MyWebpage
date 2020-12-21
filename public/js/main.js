@@ -1,7 +1,7 @@
 import getRandomInt from "../js/Random.js";
 
 
-const terminalGreen = {r: 51, g: 255, b: 0, a: 255}
+const yellow = {r: 200, g: 255, b: 0, a: 255}
 const img = new Image()
 const svgImg = new Image()
 img.src = 'images/jpeg/me.jpeg'
@@ -11,6 +11,11 @@ let hiddenCanvas
 let ctx
 let hCtx
 
+
+
+function cursor(x,y){
+
+}
 
 function setup(width, height) {
     mainCanvas = document.querySelector('#mainCanvas')
@@ -26,65 +31,53 @@ function setup(width, height) {
 
 
 
-function animate() {
-    setInterval(() => {
-        ctx.putImageData(setColor(ctx.createImageData(10, 20)), 260, 0)
-        setTimeout(() => {
-            ctx.clearRect(260, 0, 10, 20)
-        }, 500)
-    }, 1000)
-}
-
-window.onload =()=>{
-    ctx.fillStyle = '#33ff00'
-    ctx.font = '15px courier'
-    animate(0,20)
-    ctx.fillText('Press any key to continue...', 10, 15)
-}
-
-
-window.onkeypress =(ev)=>{
-    ctx.clearRect(0,0, img.width,img.height)
-        let row = 0
-        setInterval(()=>{
-            drawRow(row)
-            row+=40
-        }, 2000)
-}
 
 img.onload = () => {
     setup(img.width, img.height)
 }
+
+window.onload = () => {
+    ctx.fillStyle = 'yellow'
+    ctx.font = '15px courier'
+    ctx.fillText('jake@homepage:~$', 10, 15)
+}
+
+
+window.onkeypress = (ev) => {
+    ctx.clearRect(0, 0, img.width, img.height)
+    drawRow()
+}
+
+
+function setColor(imageData, rgb) {
+    for (let i = 0; i < imageData.data.length; i += 4) {
+        imageData.data[i] = rgb.r
+        imageData.data[i + 1] = rgb.g
+        imageData.data[i + 2] = rgb.b
+        imageData.data[i + 3] = 255
+    }
+    return imageData
+}
+
+
+function drawRow() {
+    let x = 0
+    setInterval(() => {
+        if (x < img.width) {
+            let cursor = setColor(ctx.createImageData(5, 533), yellow)
+            let imageData = hCtx.getImageData(x, 0, 10, 533)
+            ctx.putImageData(cursor, x + 10, 0)
+            ctx.putImageData(randomAlpha(imageData), x, 0)
+            ctx.drawImage(svgImg, 0, 0)
+            x++
+        }
+    }, 0)
+}
+
 
 function randomAlpha(imageData) {
     for (let i = 0; i < imageData.data.length; i += 4) {
         imageData.data[i + 3] = getRandomInt(0, 255)
     }
     return imageData
-}
-function setColor(imageData) {
-    for (let i = 0; i < imageData.data.length; i += 4) {
-        imageData.data[i] = 51
-        imageData.data[i + 1] = 255
-        imageData.data[i + 2] = 0
-        imageData.data[i+3] = 255
-    }
-    return imageData
-}
-
-
-
-function drawRow(row){
-    let x=0
-    setInterval(() => {
-        if (x < img.width) {
-            let cursor = setColor(ctx.createImageData(10, 40))
-
-            let imageData = hCtx.getImageData(x, row, 10, 40)
-            ctx.putImageData(cursor,x+10,row)
-            ctx.putImageData(randomAlpha(imageData), x, row)
-            ctx.drawImage(svgImg, 0 ,0)
-            x++
-        }
-    }, 0)
 }
