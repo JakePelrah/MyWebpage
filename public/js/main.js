@@ -1,5 +1,4 @@
-import Cursor from "../js/Cursor.js";
-import Terminal from "../js/Terminal.js"
+import KeyBuffer from "../js/KeyBuffer.js"
 
 const yellow = {r: 255, g: 176, b: 0, a: 255}
 let mainCanvas = document.querySelector('#mainCanvas')
@@ -8,79 +7,15 @@ mainCanvas.width = 600
 mainCanvas.height = 600
 
 
-let term = new Terminal(ctx)
-let cursor = new Cursor(yellow,10, 20 , ctx)
-const keyboardBuffer = []
-cursor.setPosition([0,5])
-cursor.blink()
-window.onkeydown = (ev) => {
-    switch (ev.key) {
-        case 'Backspace':
-            keyboardBuffer.pop()
-            let textWidth = ctx.measureText(keyboardBuffer.join('')).width
-            let x = 210 + textWidth
-            let y = 5
-            ctx.clearRect(x, y, 10, 20)
-            break
-        case 'Enter':
-            console.log('enter')
-            if(keyboardBuffer.join('') === 'resume'){
-                console.log('display resume')
-            }
-            else if('music'){
-                console.log('display my image with music links')
-            }
-            else if(''){
-
-            }
-            break
-        case 'Tab':
-            break
-        default:
-            if (ev.key.length === 1 &&
-                ev.key.match(/\w|[-\s!@#$%^&*()]/)) {
-                keyboardBuffer.push(ev.key)
-                ctx.fillText(`${keyboardBuffer.join('')}`, 210, 20)
-            }
-    }
-
-}
+let keyBuffer = new KeyBuffer()
 
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// window.onload = () => {
-// }
-//
-// window.onkeypress = (ev) => {
-//
-// }
-//
-// window.onkeydown = (ev) => {
-//
-// }
-//
-//
-//
+//Process keyboard input
+window.addEventListener('keydown', (ev) => {
+    keyBuffer.update(ev)
+})
+
+
 // //
 // // function drawRow() {
 // //     let x = 0

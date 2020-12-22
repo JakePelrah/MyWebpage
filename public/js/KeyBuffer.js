@@ -1,26 +1,26 @@
 class keyBuffer {
-    keyBuffer
-
-    constructor() {
-        this.keyBuffer = [];
+    buffer
+    constructor(buffer) {
+        this.buffer = []
     }
 
+    update(ev){
+        let key = ev.key
 
-    push(symbol) {
-        if (symbol.match(/\w|[-\s!@#$%^&*()]/)) {
-
-            this.keyBuffer.push(symbol)
+        if (key.match(/^[\w\s!@#$%^&*()_-]$/)) {
+            this.buffer.push(key)
         }
-
-        pop()
-        {
-            this.keyBuffer.pop()
+        else if(key === 'Backspace'){
+            this.buffer.pop()
         }
+        console.log(this.toString())
 
 
-        refresh()
-        {
+    }
 
-        }
+    toString() {
+        return this.buffer.join('')
     }
 }
+
+export default keyBuffer
