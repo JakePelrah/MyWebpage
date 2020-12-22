@@ -1,20 +1,18 @@
-
 import Cursor from "../js/Cursor.js";
+import Terminal from "../js/Terminal.js"
 
-const yellow = {r: 51, g: 255, b: 200, a: 255}
+const yellow = {r: 255, g: 176, b: 0, a: 255}
 let mainCanvas = document.querySelector('#mainCanvas')
 let ctx = mainCanvas.getContext('2d')
 mainCanvas.width = 600
 mainCanvas.height = 600
 
 
-ctx.font = '20px ubuntu mono'
-ctx.fillStyle = 'rgba(51,255,200,255)'
-ctx.fillText('guest@jakePelrah:~$', 10, 20)
-
-
+let term = new Terminal(ctx)
+let cursor = new Cursor(yellow,10, 20 , ctx)
 const keyboardBuffer = []
-
+cursor.setPosition([0,5])
+cursor.blink()
 window.onkeydown = (ev) => {
     switch (ev.key) {
         case 'Backspace':
