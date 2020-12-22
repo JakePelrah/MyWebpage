@@ -1,4 +1,5 @@
-import Terminal from '../js/Terminal.js'
+
+import Cursor from "../js/Cursor.js";
 
 const yellow = {r: 51, g: 255, b: 200, a: 255}
 let mainCanvas = document.querySelector('#mainCanvas')
@@ -6,7 +7,7 @@ let ctx = mainCanvas.getContext('2d')
 mainCanvas.width = 600
 mainCanvas.height = 600
 
-let terminal = new Terminal(yellow, ctx)
+
 ctx.font = '20px ubuntu mono'
 ctx.fillStyle = 'rgba(51,255,200,255)'
 ctx.fillText('guest@jakePelrah:~$', 10, 20)
@@ -14,28 +15,34 @@ ctx.fillText('guest@jakePelrah:~$', 10, 20)
 
 const keyboardBuffer = []
 
-
-
-
 window.onkeydown = (ev) => {
     switch (ev.key) {
         case 'Backspace':
             keyboardBuffer.pop()
-            let string = keyboardBuffer.join('')
-            let textWidth = ctx.measureText(string).width
-            ctx.fillRect()
+            let textWidth = ctx.measureText(keyboardBuffer.join('')).width
+            let x = 210 + textWidth
+            let y = 5
+            ctx.clearRect(x, y, 10, 20)
             break
         case 'Enter':
+            console.log('enter')
+            if(keyboardBuffer.join('') === 'resume'){
+                console.log('display resume')
+            }
+            else if('music'){
+                console.log('display my image with music links')
+            }
+            else if(''){
+
+            }
             break
         case 'Tab':
             break
         default:
             if (ev.key.length === 1 &&
-                ev.key.match(/\w|[-]/)) {
+                ev.key.match(/\w|[-\s!@#$%^&*()]/)) {
                 keyboardBuffer.push(ev.key)
-                let string = keyboardBuffer.join('')
-
-                ctx.fillText(`${string}`,10,40)
+                ctx.fillText(`${keyboardBuffer.join('')}`, 210, 20)
             }
     }
 
