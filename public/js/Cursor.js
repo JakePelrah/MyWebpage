@@ -1,42 +1,60 @@
 class Cursor {
     ctx
-    cursor
-    color
     width
     height
+    color
+    cursor
+    intervalId
+    position
 
-    constructor(ctx, width, height, color) {
-        this.ctx = ctx;
+    constructor(color, width, height, ctx) {
+        this.color = color;
         this.width = width
         this.height = height
+        this.ctx = ctx
         this.cursor = this.ctx.createImageData(this.width, this.height)
-        this.color = color
-        this.setColor()
+        this.setColor(this.color)
     }
 
-    setColor() {
+    setColor(color) {
         for (let i = 0; i < this.cursor.data.length; i += 4) {
-            this.cursor.data[i] = this.color.r
-            this.cursor.data[i + 1] = this.color.g
-            this.cursor.data[i + 2] = this.color.b
-            this.cursor.data[i + 3] = this.color.a
+            this.cursor.data[i] = color.r
+            this.cursor.data[i + 1] = color.g
+            this.cursor.data[i + 2] = color.b
+            this.cursor.data[i + 3] = color.a
         }
     }
 
+    setPosition(position) {
+        this.position = position
+    }
 
+    setBlinking(isBlinking){
+        if(isBlinking){
+            this.blink()
+        }
+        else {
+            clearInterval(this.intervalId)
+        }
+    }
 
+    drawCursor(){
+        this.ctx.putImageData(this.cursor, ...this.position)
+    }
 
-    animate(x, y) {
-        setInterval(() => {
-            this.ctx.putImageData(this.cursor, x, y)
-            setTimeout(() => {
-                this.ctx.clearRect(x, y, this.width, this.height)
+    clearCursor() {
+        this.ctx.clearRect(...this.position, this.width, this.height)
+    }
+
+    blink() {
+      this.intervalId =  setInterval(()=>{
+            this.drawCursor()
+            setTimeout(()=>{
+                this.clearCursor()
             }, 500)
-        }, 1000)
+        },1000)
     }
 }
 
 
 export default Cursor
-
-
