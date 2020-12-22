@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Cursor">
+      <change afterPath="$PROJECT_DIR$/public/js/Cursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/NoiseGenerator.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +96,8 @@
       <workItem from="1608502766187" duration="1155000" />
       <workItem from="1608504375501" duration="8573000" />
       <workItem from="1608513025385" duration="2373000" />
-      <workItem from="1608525363454" duration="615000" />
+      <workItem from="1608525363454" duration="1896000" />
+      <workItem from="1608590170605" duration="7494000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>
@@ -122,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608515396860</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cursor">
+      <created>1608526051255</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608526051255</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
