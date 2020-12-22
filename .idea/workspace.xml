@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Cursor">
-      <change afterPath="$PROJECT_DIR$/public/js/Cursor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/Buffer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/NoiseGenerator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/Terminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +97,8 @@
       <workItem from="1608513025385" duration="2373000" />
       <workItem from="1608525363454" duration="1896000" />
       <workItem from="1608590170605" duration="7494000" />
+      <workItem from="1608598184557" duration="62000" />
+      <workItem from="1608604619233" duration="5469000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>

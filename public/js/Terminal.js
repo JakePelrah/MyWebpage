@@ -6,9 +6,14 @@ class Terminal {
 
     constructor(color, ctx) {
         this.ctx = ctx
-        this.cursor = new Cursor(color, 10, 20, this.ctx)
-        this.cursor.setPosition([0, 0])
-        this.cursor.setBlinking(true)
+        this._cursor = new Cursor(color, 10, 20, this.ctx)
+        this._cursor.setPosition([0, 0])
+        this._cursor.setBlinking(true)
+    }
+
+
+    get cursor() {
+        return this._cursor;
     }
 
 // console.log(ev)

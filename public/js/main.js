@@ -1,28 +1,45 @@
 import Terminal from '../js/Terminal.js'
 
-const yellow = {r:51, g:255, b:200,a:255}
-
-
-let mainCanvas
-let ctx
-mainCanvas = document.querySelector('#mainCanvas')
+const yellow = {r: 51, g: 255, b: 200, a: 255}
+let mainCanvas = document.querySelector('#mainCanvas')
+let ctx = mainCanvas.getContext('2d')
 mainCanvas.width = 600
 mainCanvas.height = 600
-ctx = mainCanvas.getContext('2d')
 
 let terminal = new Terminal(yellow, ctx)
+ctx.font = '20px ubuntu mono'
+ctx.fillStyle = 'rgba(51,255,200,255)'
+ctx.fillText('guest@jakePelrah:~$', 10, 20)
+
+
+const keyboardBuffer = []
 
 
 
 
+window.onkeydown = (ev) => {
+    switch (ev.key) {
+        case 'Backspace':
+            keyboardBuffer.pop()
+            let string = keyboardBuffer.join('')
+            let textWidth = ctx.measureText(string).width
+            ctx.fillRect()
+            break
+        case 'Enter':
+            break
+        case 'Tab':
+            break
+        default:
+            if (ev.key.length === 1 &&
+                ev.key.match(/\w|[-]/)) {
+                keyboardBuffer.push(ev.key)
+                let string = keyboardBuffer.join('')
 
+                ctx.fillText(`${string}`,10,40)
+            }
+    }
 
-
-
-
-
-
-
+}
 
 
 //
