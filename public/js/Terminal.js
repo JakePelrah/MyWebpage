@@ -11,7 +11,7 @@ class Terminal {
     cursor
     kBuffer
     prompt
-
+    commands = ['resume', 'music']
     constructor(ctx) {
         this.ctx = ctx;
         this.cursor = new Cursor(Color.yellow,
@@ -19,10 +19,7 @@ class Terminal {
         this.kBuffer = new KeyBuffer()
         this.prompt = 'guest@jakePelrah:~$'
         this.setDisplay('#ffb000', '20px ubuntu mono')
-        this.drawPrompt(0, 20)
     }
-
-
 
     setDisplay(color, font) {
         this.ctx.fillStyle = color
@@ -30,11 +27,28 @@ class Terminal {
     }
 
     drawPrompt(x, y) {
-        this.ctx.fillText(this.prompt, x, y)
+        this.x = x
+        this.y = y
+        this.ctx.fillText(this.prompt, this.x, this.y)
     }
 
+    onEnter(){
+        if(!this.kBuffer.empty()){
+            console.log(this.kBuffer.toString())
+            this.kBuffer.clear()
+        }
+
+
+        //process command
+        //redraw prompt
+    }
+
+
     update(ev){
-        console.log(ev)
+        if(ev.key ==='Enter'){
+            this.onEnter()
+
+        }
         this.kBuffer.update(ev)
     }
 

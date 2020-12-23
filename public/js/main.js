@@ -10,6 +10,7 @@ function setup() {
     mainCanvas.height = 600
     ctx = mainCanvas.getContext('2d')
     terminal = new Terminal(ctx)
+    terminal.drawPrompt(0,20)
 }
 
 window.onload = setup

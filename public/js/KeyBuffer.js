@@ -8,11 +8,19 @@ class keyBuffer {
         this.buffer = []
     }
 
+    clear() {
+        this.buffer = []
+    }
+
+    empty() {
+        return this.buffer.length === 0
+    }
+
     /**
      * update -process keydown event
      * @param ev
      */
-    update(ev){
+    update(ev) {
         let key = ev.key
 
         //Match alphanumeric and some special characters
@@ -20,11 +28,9 @@ class keyBuffer {
 
         if (key.match(regex)) {
             this.buffer.push(key)
-        }
-        else if(key === 'Backspace'){
+        } else if (key === 'Backspace') {
             this.buffer.pop()
         }
-        console.log(this.toString())
     }
 
     toString() {
