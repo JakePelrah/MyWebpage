@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Updates">
+      <change afterPath="$PROJECT_DIR$/public/js/Coord.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/Cursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Cursor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/KeyBuffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/KeyBuffer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/Random.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Terminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/images/jpeg/me.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +57,7 @@
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -65,13 +69,17 @@
       <recent name="C:\Users\DAW\Desktop\App\public\images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.app.js">
     <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/public/js/main.js" working-dir="$PROJECT_DIR$/public/js">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.app.js" />
+        <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +106,9 @@
       <workItem from="1608661439536" duration="860000" />
       <workItem from="1608668482489" duration="3297000" />
       <workItem from="1608673045559" duration="2723000" />
-      <workItem from="1608679817740" duration="2683000" />
+      <workItem from="1608679817740" duration="3983000" />
+      <workItem from="1608690884098" duration="2958000" />
+      <workItem from="1608845031727" duration="3399000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>
@@ -128,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608674399101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updates">
+      <created>1608682735568</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608682735568</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

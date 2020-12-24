@@ -10,7 +10,6 @@ function setup() {
     mainCanvas.height = 600
     ctx = mainCanvas.getContext('2d')
     terminal = new Terminal(ctx)
-    terminal.drawPrompt(0,20)
 }
 
 window.onload = setup
@@ -20,4 +19,12 @@ window.onload = setup
 window.addEventListener('keydown', (ev) => {
     terminal.update(ev)
 })
+
+
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 

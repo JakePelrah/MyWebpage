@@ -4,7 +4,7 @@ class Cursor {
     height
     color
     cursor
-    intervalId
+
     constructor(color, width, height, ctx) {
         this.color = color;
         this.width = width
@@ -23,31 +23,14 @@ class Cursor {
         }
     }
 
-    drawCursor(position){
-        this.ctx.putImageData(this.cursor, ...position)
+    drawCursor(x,y) {
+        this.ctx.putImageData(this.cursor, x, y)
     }
 
-    clearCursor(position) {
-        this.ctx.clearRect(...position, this.width, this.height)
+    clearCursor(x,y) {
+        this.ctx.clearRect(x, y, this.width, this.height)
     }
 
-    // setBlinking(isBlinking){
-    //     if(isBlinking){
-    //         this.blink()
-    //     }
-    //     else {
-    //         clearInterval(this.intervalId)
-    //     }
-    // }
-    //
-    // blink() {
-    //   this.intervalId =  setInterval(()=>{
-    //         this.drawCursor()
-    //         setTimeout(()=>{
-    //             this.clearCursor()
-    //         }, 500)
-    //     },1000)
-    // }
 }
 
 
