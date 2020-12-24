@@ -30,7 +30,6 @@ class Cursor {
     clearCursor(x,y) {
         this.ctx.clearRect(x, y, this.width, this.height)
     }
-
 }
 
 

@@ -23,7 +23,7 @@ class keyBuffer {
     push(ev) {
         let key = ev.key
         //Match alphanumeric and some special characters
-        let regex = /^[\w\s!@#$%^&*()_-]$/
+        let regex = /^[\w\s\.!@#$%^&*()_-]$/
 
         if (key.match(regex)) {
             this.buffer.push(key)

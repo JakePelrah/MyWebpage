@@ -53,8 +53,7 @@ class Terminal {
             this.kBuffer.pop()
             let textWidth = this.getTextWidth(this.kBuffer.toString())
             this.ctx.clearRect( promptWidth + textWidth + 10, this.textPos.y-15, 20, 20)
-            this.cursor.clearCursor(promptWidth + textWidth + 20, this.cursorPos.y)
-            this.cursor.drawCursor(promptWidth + textWidth + 20, this.cursorPos.y)
+            this.cursor.drawCursor(promptWidth + textWidth + 10, this.cursorPos.y)
         }
 
         else if(ev.key === 'Enter'){

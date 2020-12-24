@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/public/js/Coord.js" afterDir="false" />
+    <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Terminal Updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Cursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Cursor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/KeyBuffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/KeyBuffer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Random.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Terminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/images/jpeg/me.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,8 @@
       <workItem from="1608673045559" duration="2723000" />
       <workItem from="1608679817740" duration="3983000" />
       <workItem from="1608690884098" duration="2958000" />
-      <workItem from="1608845031727" duration="3399000" />
+      <workItem from="1608845031727" duration="3571000" />
+      <workItem from="1608848627267" duration="298000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>
@@ -145,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608682735568</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Terminal Updates">
+      <created>1608848575720</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608848575721</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +170,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="Terminal Updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminal Updates" />
   </component>
 </project>
