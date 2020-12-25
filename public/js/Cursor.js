@@ -1,14 +1,11 @@
+/**
+ * Cursor -terminal cursor
+ */
 class Cursor {
-    width
-    height
-    color
     _cursor
     constructor(color, width, height) {
-        this.color = color;
-        this.width = width
-        this.height = height
-        this._cursor = new ImageData(this.width, this.height)
-        this.setColor(this.color)
+        this._cursor = new ImageData(width, height)
+        this.setColor(color)
     }
 
     setColor(color) {
@@ -20,10 +17,10 @@ class Cursor {
         }
     }
 
+
     get cursor() {
         return this._cursor;
     }
 }
-
 
 export default Cursor

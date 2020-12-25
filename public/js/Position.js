@@ -1,4 +1,7 @@
-class Coord{
+/**
+ * Position - canvas position
+ */
+class Position {
     _x
     _y
     constructor(x, y) {
@@ -14,7 +17,6 @@ class Coord{
         this._y +=delta
     }
 
-
     get x() {
         return this._x;
     }
@@ -25,4 +27,4 @@ class Coord{
 }
 
 
-export  default  Coord
+export  default  Position

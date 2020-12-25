@@ -1,20 +1,19 @@
 import KeyBuffer from "../js/KeyBuffer.js"
 import Cursor from "../js/Cursor.js";
-import Color from "../js/Color.js"
-import Coord from "../js/Coord.js"
-import keyBuffer from "../js/KeyBuffer.js";
+import Position from "./Position.js"
+
 
 /**
- * Terminal -simulated terminal
+ * Terminal -simulated canvas terminal
  */
 class Terminal {
     ctx
     cursor = new Cursor(Color.yellow, 10, 20).cursor
     kBuffer = new KeyBuffer()
     prompt = 'guest@jakePelrah:~$'
-    promptPos = new Coord(0, 20)
-    textPos = new Coord(10, 20)
-    cursorPos = new Coord(200, 5)
+    promptPos = new Position(0, 20)
+    textPos = new Position(10, 20)
+    cursorPos = new Position(200, 5)
     promptWidth = 0
 
     constructor(ctx) {
@@ -86,11 +85,6 @@ class Terminal {
             this.processKey(ev)
         }
         console.log(this.kBuffer.toString())
-    }
-
-
-    get kBuffer() {
-        return this.kBuffer;
     }
 }
 
