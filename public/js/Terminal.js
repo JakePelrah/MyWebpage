@@ -49,7 +49,7 @@ class Terminal {
             this.kBuffer.pop()
             let textWidth = this.getTextWidth(this.kBuffer.toString())
             this.ctx.clearRect( promptWidth + textWidth + 10, this.textPos.y-15, 20, 20)
-            this.cursor.putImageData(promptWidth + textWidth + 10, this.cursorPos.y)
+            this.ctx.putImageData(this.cursor, promptWidth + textWidth + 10, this.cursorPos.y)
         }
 
         else if(ev.key === 'Enter'){
@@ -66,7 +66,7 @@ class Terminal {
             this.kBuffer.push(ev)
             let textWidth = this.getTextWidth(this.kBuffer.toString())
             this.ctx.putImageData(this.cursor, promptWidth + textWidth + 10, this.cursorPos.y)
-            this.cursor.clearRect(promptWidth + textWidth , this.cursorPos.y, 10, 20)
+            this.ctx.clearRect(promptWidth + textWidth , this.cursorPos.y, 10, 20)
             this.ctx.fillText(this.kBuffer.toString(), promptWidth + 10 ,  this.textPos.y)
         }
     console.log(this.kBuffer.toString())

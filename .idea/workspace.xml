@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Terminal Updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Color.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Color.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Cursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Cursor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Terminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +103,7 @@
       <workItem from="1608690884098" duration="2958000" />
       <workItem from="1608845031727" duration="3571000" />
       <workItem from="1608848627267" duration="298000" />
-      <workItem from="1608856210074" duration="902000" />
+      <workItem from="1608856210074" duration="985000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>
@@ -152,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608848575721</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Terminal Updates">
+      <created>1608857117201</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608857117201</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
