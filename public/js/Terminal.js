@@ -17,8 +17,7 @@ class Terminal {
     cursorPos
     constructor(ctx) {
         this.ctx = ctx;
-        this.cursor = new Cursor(Color.yellow,
-            10, 20, this.ctx)
+        this.cursor = new Cursor(Color.yellow, 10, 20).cursor
         this.kBuffer = new KeyBuffer()
         this.prompt = 'guest@jakePelrah:~$'
         this.setDisplay('#ffb000', '20px ubuntu mono')
@@ -26,8 +25,8 @@ class Terminal {
         this.textPos = new Coord(10, 20)
         this.cursorPos = new Coord(200, 5)
         //Draw
-        this.cursor.drawCursor(this.cursorPos.x, this.cursorPos.y)
-        this.drawText(this.prompt, this.promptPos.x ,this.promptPos.y)
+        this.ctx.putImageData(this.cursor,this.cursorPos.x, this.cursorPos.y)
+        this.ctx.fillText(this.prompt, this.promptPos.x ,this.promptPos.y)
 
     }
 
@@ -37,9 +36,6 @@ class Terminal {
         this.ctx.font = font
     }
 
-    drawText(text, x, y) {
-        this.ctx.fillText(text, x,y)
-    }
 
     getTextWidth(string){
         return this.ctx.measureText(string).width
@@ -53,25 +49,25 @@ class Terminal {
             this.kBuffer.pop()
             let textWidth = this.getTextWidth(this.kBuffer.toString())
             this.ctx.clearRect( promptWidth + textWidth + 10, this.textPos.y-15, 20, 20)
-            this.cursor.drawCursor(promptWidth + textWidth + 10, this.cursorPos.y)
+            this.cursor.putImageData(promptWidth + textWidth + 10, this.cursorPos.y)
         }
 
         else if(ev.key === 'Enter'){
             let textWidth = this.getTextWidth(this.kBuffer.toString())
             this.promptPos.addY(20)
             this.textPos.addY(20)
-            this.cursor.clearCursor(promptWidth + textWidth + 10, this.cursorPos.y)
+            this.ctx.clearRect(promptWidth + textWidth + 10, this.cursorPos.y, 10,20)
             this.cursorPos.addY(20)
-            this.drawText(this.prompt, this.promptPos.x ,this.promptPos.y)
-            this.cursor.drawCursor(promptWidth +  10, this.cursorPos.y)
+            this.ctx.fillText(this.prompt, this.promptPos.x ,this.promptPos.y)
+            this.ctx.putImageData(this.cursor,promptWidth +  10, this.cursorPos.y)
             this.kBuffer.clear()
         }
         else {
             this.kBuffer.push(ev)
             let textWidth = this.getTextWidth(this.kBuffer.toString())
-            this.cursor.drawCursor(promptWidth + textWidth + 10, this.cursorPos.y)
-            this.cursor.clearCursor(promptWidth + textWidth , this.cursorPos.y)
-            this.drawText(this.kBuffer.toString(), promptWidth + 10 ,  this.textPos.y)
+            this.ctx.putImageData(this.cursor, promptWidth + textWidth + 10, this.cursorPos.y)
+            this.cursor.clearRect(promptWidth + textWidth , this.cursorPos.y, 10, 20)
+            this.ctx.fillText(this.kBuffer.toString(), promptWidth + 10 ,  this.textPos.y)
         }
     console.log(this.kBuffer.toString())
     }
