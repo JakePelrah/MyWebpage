@@ -12,10 +12,6 @@ class keyBuffer {
         this.buffer = []
     }
 
-    empty() {
-        return this.buffer.length === 0
-    }
-
     /**
      * update -process keydown event
      * @param ev
@@ -23,17 +19,16 @@ class keyBuffer {
     push(ev) {
         let key = ev.key
         //Match alphanumeric and some special characters
-        let regex = /^[\w\s\.!@#$%^&*()_-]$/
+        let regex = /^[\w\s\.~`!@#$%^&*\\|(){}\[\]+=,/?<>:;'"_-]$/
 
         if (key.match(regex)) {
             this.buffer.push(key)
         }
     }
 
-    pop(ev) {
+    pop() {
         this.buffer.pop()
     }
-
 
     toString() {
         return this.buffer.join('')

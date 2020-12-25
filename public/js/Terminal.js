@@ -9,67 +9,83 @@ import keyBuffer from "../js/KeyBuffer.js";
  */
 class Terminal {
     ctx
-    cursor
-    kBuffer
-    prompt
-    promptPos
-    textPos
-    cursorPos
+    cursor = new Cursor(Color.yellow, 10, 20).cursor
+    kBuffer = new KeyBuffer()
+    prompt = 'guest@jakePelrah:~$'
+    promptPos = new Coord(0, 20)
+    textPos = new Coord(10, 20)
+    cursorPos = new Coord(200, 5)
+    promptWidth = 0
+
     constructor(ctx) {
         this.ctx = ctx;
-        this.cursor = new Cursor(Color.yellow, 10, 20).cursor
-        this.kBuffer = new KeyBuffer()
-        this.prompt = 'guest@jakePelrah:~$'
-        this.setDisplay('#ffb000', '20px ubuntu mono')
-        this.promptPos = new Coord(0, 20)
-        this.textPos = new Coord(10, 20)
-        this.cursorPos = new Coord(200, 5)
-        //Draw
-        this.ctx.putImageData(this.cursor,this.cursorPos.x, this.cursorPos.y)
-        this.ctx.fillText(this.prompt, this.promptPos.x ,this.promptPos.y)
-
+        this.drawPrompt()
+        this.drawCursor()
     }
 
-
-    setDisplay(color, font) {
-        this.ctx.fillStyle = color
-        this.ctx.font = font
+    drawCursor() {
+        this.ctx.putImageData(this.cursor, this.cursorPos.x, this.cursorPos.y)
     }
 
+    drawPrompt() {
+        this.ctx.fillText(this.prompt, this.promptPos.x, this.promptPos.y)
+    }
 
-    getTextWidth(string){
+    getTextWidth(string) {
         return this.ctx.measureText(string).width
-
     }
 
-    update(ev){
+    backspace() {
+        //Remove last symbol in the buffer
+        this.kBuffer.pop()
+        //get updated string width
+        let textWidth = this.getTextWidth(this.kBuffer.toString())
+        //Clear the popped symbol from the screen
+        this.ctx.clearRect(this.promptWidth + textWidth + 10, this.textPos.y - 15, 20, 20)
+        //Redraw the cursor to reflect removing the character
+        this.ctx.putImageData(this.cursor, this.promptWidth + textWidth + 10, this.cursorPos.y)
+    }
 
-        const promptWidth = this.getTextWidth(this.prompt)
-        if(ev.key === 'Backspace'){
-            this.kBuffer.pop()
-            let textWidth = this.getTextWidth(this.kBuffer.toString())
-            this.ctx.clearRect( promptWidth + textWidth + 10, this.textPos.y-15, 20, 20)
-            this.ctx.putImageData(this.cursor, promptWidth + textWidth + 10, this.cursorPos.y)
-        }
 
-        else if(ev.key === 'Enter'){
-            let textWidth = this.getTextWidth(this.kBuffer.toString())
-            this.promptPos.addY(20)
-            this.textPos.addY(20)
-            this.ctx.clearRect(promptWidth + textWidth + 10, this.cursorPos.y, 10,20)
-            this.cursorPos.addY(20)
-            this.ctx.fillText(this.prompt, this.promptPos.x ,this.promptPos.y)
-            this.ctx.putImageData(this.cursor,promptWidth +  10, this.cursorPos.y)
-            this.kBuffer.clear()
+    enter() {
+        //process command here
+
+        let textWidth = this.getTextWidth(this.kBuffer.toString())
+        //Clear the prev lines cursor
+        this.ctx.clearRect(this.promptWidth + textWidth + 10, this.cursorPos.y, 10, 20)
+        //Update positions
+        this.promptPos.addY(20)
+        this.textPos.addY(20)
+        this.cursorPos.addY(20)
+        //Redraw the prompt
+        this.ctx.fillText(this.prompt, this.promptPos.x, this.promptPos.y)
+        //Redraw the cursor
+        this.ctx.putImageData(this.cursor, this.promptWidth + 10, this.cursorPos.y)
+        //Clear the buffer
+        this.kBuffer.clear()
+    }
+
+    processKey(ev) {
+        this.kBuffer.push(ev)
+        let textWidth = this.getTextWidth(this.kBuffer.toString())
+        //Draw the cursor to reflect end of current line
+        this.ctx.putImageData(this.cursor, this.promptWidth + textWidth + 10, this.cursorPos.y)
+        //Clear the prev location of the cursor
+        this.ctx.clearRect(this.promptWidth + textWidth, this.cursorPos.y, 10, 20)
+        //Draw input string to screen
+        this.ctx.fillText(this.kBuffer.toString(), this.promptWidth + 10, this.textPos.y)
+    }
+
+    update(ev) {
+        this.promptWidth = this.getTextWidth(this.prompt)
+        if (ev.key === 'Backspace') {
+            this.backspace()
+        } else if (ev.key === 'Enter') {
+            this.enter()
+        } else {
+            this.processKey(ev)
         }
-        else {
-            this.kBuffer.push(ev)
-            let textWidth = this.getTextWidth(this.kBuffer.toString())
-            this.ctx.putImageData(this.cursor, promptWidth + textWidth + 10, this.cursorPos.y)
-            this.ctx.clearRect(promptWidth + textWidth , this.cursorPos.y, 10, 20)
-            this.ctx.fillText(this.kBuffer.toString(), promptWidth + 10 ,  this.textPos.y)
-        }
-    console.log(this.kBuffer.toString())
+        console.log(this.kBuffer.toString())
     }
 
 
