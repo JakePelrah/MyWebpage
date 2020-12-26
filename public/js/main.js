@@ -6,7 +6,7 @@ const yellow = {r:252, g:127, b:0, a:255}
 let term
 
 function setup() {
-    term = new Terminal('#mainCanvas', 'UbuntuMono', yellow)
+    term = new Terminal('#mainCanvas', 'UbuntuMono', yellow,'guest@jakepelrah:~$' )
 }
 
 

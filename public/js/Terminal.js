@@ -6,9 +6,7 @@ import Canvas from "../js/Canvas.js";
 /**
  * Terminal -simulated canvas terminal
  */
-class Terminal {
-    canvas
-    ctx
+class Terminal extends Canvas{
     cursor
     kBuffer
     promptPos
@@ -16,20 +14,15 @@ class Terminal {
     cursorPos
     promptStr
     promptWidth = 0
-
-    constructor(id, font, color) {
-        this.canvas = new Canvas(id)
-        this.ctx = this.canvas.ctx
-        this.color = color
-        this.ctx.font = font
-        this.ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a})`
-        this.cursor = new Cursor(10, 20)
+    constructor(id, font, color, promptStr) {
+        super(id, font, color);
+        this.promptStr = promptStr
         this.kBuffer = new KeyBuffer()
+        this.cursor = new Cursor(10, 20)
         this.promptPos = new Position(0, 20)
-        this.promptStr = 'guest@jakepelrah:~$'
         this.textPos = new Position(10, 20)
         this.cursorPos = new Position(200, 5)
-        this.cursor.setColor(this.color)
+        this.cursor.setColor(color)
         this.drawPrompt()
         this.drawCursor()
     }
@@ -47,12 +40,7 @@ class Terminal {
     }
 
     resize() {
-        this.canvas.resize()
-        this.ctx.font = `${window.innerHeight/window.innerWidth * 40}px UbuntuMono`
-        this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-        this.ctx.fillRect(0, 0, 39, 39)
-        this.ctx.putImageData(this.cursor.ImageData,0,0)
-
+        super.resize()
     }
 
     backspace() {
