@@ -1,19 +1,27 @@
 class Canvas {
-    width
-    height
-    ctx
-    constructor(id, width, height) {
-        this.width = width;
-        this.height = height;
-        this.canvas = document.querySelector(id)
-        this.canvas.width = this.width
-        this.canvas.height = this.height
+    _ctx
+    constructor(id) {
+        this._canvas = document.querySelector(id)
+        this._canvas.width = window.innerWidth / 2
+        this._canvas.height = window.innerHeight / 2
 
-        if (this.canvas.getContext) {
-            this.ctx = this.canvas.getContext('2d')
-            this.ctx.fillStyle = '#ffb000'
-            this.ctx.font = '20px ubuntu mono'
+        if (this._canvas.getContext) {
+            this._ctx = this._canvas.getContext('2d')
         }
     }
 
+
+
+    get ctx() {
+        return this._ctx;
+    }
+
+    resize() {
+        this.ctx.font = `${window.innerWidth/4}px UbuntuMono`
+        this._canvas.width = window.innerWidth / 2
+        this._canvas.height = window.innerHeight / 2
+
+    }
 }
+
+export default Canvas

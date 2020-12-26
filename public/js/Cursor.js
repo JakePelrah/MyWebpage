@@ -3,10 +3,11 @@
  */
 class Cursor {
     _cursor
-    constructor(color, width, height) {
+    constructor(width, height) {
         this._cursor = new ImageData(width, height)
-        this.setColor(color)
+
     }
+
 
     setColor(color) {
         for (let i = 0; i < this._cursor.data.length; i += 4) {
@@ -17,8 +18,7 @@ class Cursor {
         }
     }
 
-
-    get cursor() {
+    get ImageData() {
         return this._cursor;
     }
 }
