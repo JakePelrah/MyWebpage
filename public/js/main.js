@@ -1,19 +1,11 @@
+import Terminal from '../js/Terminal.js';
+import NamedColor from '../js/NamedColor.js'
 
-import Terminal from "../js/Terminal.js";
+const canvasId = '#mainCanvas'
+const width = 800
+const height = 800
+const termFont = '30px UbuntuMono'
+const promptStr = 'guest@jakepelrah:~$'
 
+const term = new Terminal(canvasId, width, height, termFont, NamedColor.yellow, promptStr)
 
-const yellow = {r:252, g:127, b:0, a:255}
-let term
-
-function setup() {
-    term = new Terminal('#mainCanvas', 'UbuntuMono', yellow,'guest@jakepelrah:~$' )
-}
-
-
-window.onload = setup
-window.onkeydown = (ev) => {
-    term.update(ev)
-}
-window.onresize = () => {
-    term.resize()
-}
