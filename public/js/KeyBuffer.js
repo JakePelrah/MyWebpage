@@ -4,7 +4,8 @@
 class keyBuffer {
     buffer
 
-    constructor() {
+    constructor(regex) {
+        this.regex = regex
         this.buffer = []
     }
 
@@ -18,10 +19,7 @@ class keyBuffer {
      */
     push(ev) {
         let key = ev.key
-        //Match alphanumeric and some special characters
-        let regex = /^[\w\s\.~`!@#$%^&*\\|(){}\[\]+=,/?<>:;'"_-]$/
-
-        if (key.match(regex)) {
+        if (key.match(this.regex)) {
             this.buffer.push(key)
         }
     }
