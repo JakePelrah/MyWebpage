@@ -8,7 +8,6 @@ class Canvas {
             this._ctx = this._canvas.getContext('2d')
             this.ctx.font = font
             this.ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`
-
         }
     }
 

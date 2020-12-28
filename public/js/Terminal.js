@@ -1,107 +1,60 @@
 import Canvas from "../js/Canvas.js";
+import KeyBuffer from "../js/KeyBuffer.js";
 import Position from "../js/Position.js";
-import KeyBuffer from "../js/KeyBuffer.js"
 
 /**
  * Terminal -simulated canvas terminal
  */
 class Terminal extends Canvas {
-    promptPosition
-    textPosition
-    cursorPosition
-    kBuffer
 
-    constructor(id, width, height, font, color, promptStr) {
-        super(id, width, height, font, color);
-        this.fontSize = parseInt(font.split(' ')[0].match(/[0-9]+/)[0])
+    constructor(id, width, height, font, color, promptStr, regex) {
+        super(id, width, height, font, color)
+        this.fontSize = parseInt(font.split(' ')[0].match(/[0-9]+/))
         this.promptStr = promptStr
-        let marginTop = 40
-        this.clearOffset = 10
-        this.promptWidth = this.ctx.measureText(this.promptStr).width
-        this.promptPosition = new Position(0, marginTop)
-        this.textPosition = new Position(this.promptWidth + this.fontSize, marginTop)
-        this.cursorPosition = new Position(0, 10)
-        this.kBuffer = new KeyBuffer(/^[\w\s\.~`!@#$%^&*\\|(){}\[\]+=,/?<>:;'"_-]$/)
-        this.drawPrompt()
-        this.drawCursor()
-
+        this.kBuffer = new KeyBuffer(regex)
+        this.drawPrompt(0, this.fontSize)
+        this.drawCursor(this.getStringWidth(this.promptStr)+ this.fontSize/2, 5)
         window.onkeydown = (ev) => {
-            this.controller(ev)
+            this.update(ev)
         }
     }
 
-    drawPrompt() {
-        this.ctx.fillText(this.promptStr, this.promptPosition.x, this.promptPosition.y)
+    getStringWidth(string) {
+        return this.ctx.measureText(string).width
     }
 
-    drawText() {
-        this.ctx.fillText(this.kBuffer.toString(), this.textPosition.x, this.textPosition.y)
+    drawChar(x, y) {
+        this.ctx.fillText(this.kBuffer.lastChar(), x, y)
     }
 
-    clearCharacter() {
-        let textWidth = this.ctx.measureText(this.kBuffer.toString()).width
-        this.ctx.clearRect(this.promptWidth + textWidth + this.fontSize,
-            this.textPosition.y - this.fontSize, 20, 40)
+    drawCursor(x, y) {
+        this.ctx.fillRect(x, y, this.fontSize / 2, this.fontSize)
     }
 
-    drawCursor() {
-        let textWidth = this.ctx.measureText(this.kBuffer.toString()).width
-        this.ctx.fillRect(this.promptWidth + textWidth + this.fontSize, this.cursorPosition.y, 20, 40)
+    clearCursor(x,y){
+        this.ctx.fillRect(x,y,this.fontSize/2, this.fontSize)
     }
 
-    clearCursor() {
-        let textWidth = this.ctx.measureText(this.kBuffer.toString()).width
-        this.ctx.clearRect(this.promptWidth + textWidth + this.clearOffset, this.cursorPosition.y, 20, 40)
-    }
-
-    enter(){
-        //Process the command
-        this.kBuffer.clear()
-        this.promptPosition.y += this.fontSize
-        this.textPosition.y += this.fontSize
-        this.cursorPosition.y += this.fontSize
-        this.clearCursor()
-        this.drawPrompt()
-        this.drawCursor()
+    drawPrompt(x, y) {
+        this.ctx.fillText(this.promptStr, x, y)
     }
 
 
-    backspace(){
-        this.kBuffer.pop()
-        this.clearCharacter()
-        this.drawCursor()
-        this.clearOffset = 50
-        this.clearCursor(50)
-    }
-
-
-    update(ev){
-        if (ev.key.match(/^[\w\s\.~`!@#$%^&*\\|(){}\[\]+=,/?<>:;'"_-]$/)) {
-            this.clearOffset = 10
-            this.kBuffer.push(ev)
-            this.drawCursor()
-            this.clearCursor()
-            this.drawText()
-        }
-    }
-
-    controller(ev) {
+    update(ev) {
         switch (ev.key) {
             case 'Enter':
-                this.enter()
                 break
             case 'Backspace':
-                this.backspace()
+                this.kBuffer.pop()
                 break
             default:
-                this.update(ev)
+                if (this.kBuffer.push(ev)) {
+                }
                 break
         }
-
-
     }
-
 }
+
 
 export default Terminal
 

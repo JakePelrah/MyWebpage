@@ -21,7 +21,9 @@ class keyBuffer {
         let key = ev.key
         if (key.match(this.regex)) {
             this.buffer.push(key)
+            return true
         }
+        return false
     }
 
     pop() {
@@ -30,6 +32,10 @@ class keyBuffer {
 
     toString() {
         return this.buffer.join('')
+    }
+
+    lastChar(){
+        return this.buffer[this.buffer.length-1]
     }
 }
 
