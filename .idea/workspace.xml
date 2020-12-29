@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Updates">
+    <list default="true" id="0e301f0c-e720-44ee-90c3-8ef08e543e00" name="Default Changelist" comment="Terminal Updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Cursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Cursor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/KeyBuffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/KeyBuffer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Terminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Terminal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
     </list>
@@ -24,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lkWgXMZ5gHXl98fKtHqA2mIE37" />
@@ -42,17 +45,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.15.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/buffer.test.js" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.19.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="10.17.49" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/fonts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/fonts" />
+      <recent name="$PROJECT_DIR$/public/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="C:\Users\DAW\WebstormProjects\MyWebpage\public" />
@@ -61,13 +68,17 @@
       <recent name="C:\Users\DAW\Desktop\App\public\images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.app.js">
     <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/public/js/main.js" working-dir="$PROJECT_DIR$/public/js">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.app.js" />
+        <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
   </component>
@@ -94,6 +105,21 @@
       <workItem from="1608661439536" duration="860000" />
       <workItem from="1608668482489" duration="3297000" />
       <workItem from="1608673045559" duration="2723000" />
+      <workItem from="1608679817740" duration="3983000" />
+      <workItem from="1608690884098" duration="2958000" />
+      <workItem from="1608845031727" duration="3571000" />
+      <workItem from="1608848627267" duration="298000" />
+      <workItem from="1608856210074" duration="2680000" />
+      <workItem from="1608861127160" duration="6889000" />
+      <workItem from="1608947556431" duration="4140000" />
+      <workItem from="1608952923714" duration="483000" />
+      <workItem from="1608955403590" duration="465000" />
+      <workItem from="1609101756630" duration="3509000" />
+      <workItem from="1609109852966" duration="3820000" />
+      <workItem from="1609118419562" duration="6755000" />
+      <workItem from="1609126140471" duration="200000" />
+      <workItem from="1609176932087" duration="12251000" />
+      <workItem from="1609209612389" duration="2054000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1608443857811</created>
@@ -123,7 +149,84 @@
       <option name="project" value="LOCAL" />
       <updated>1608674399101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updates">
+      <created>1608682735568</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608682735568</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Terminal Updates">
+      <created>1608848575720</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608848575721</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Terminal Updates">
+      <created>1608857117201</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608857117201</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Terminal Updates">
+      <created>1608857203455</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608857203455</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Terminal Updates">
+      <created>1608858713723</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608858713723</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Terminal Updates">
+      <created>1608932493138</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1608932493138</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Terminal Updates">
+      <created>1608951679262</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608951679262</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Terminal Updates">
+      <created>1608953393932</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608953393932</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Terminal Updates">
+      <created>1609112997947</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609112997947</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Terminal Updates">
+      <created>1609125511745</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609125511745</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Terminal Updates">
+      <created>1609185025926</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609185025926</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +247,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="Terminal Updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminal Updates" />
   </component>
 </project>

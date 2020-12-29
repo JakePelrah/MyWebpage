@@ -13,4 +13,10 @@ canvas{
     border: 1px #33FF00 solid;
 }
 
+@font-face {
+    font-family: 'UbuntuMono';
+    src: url('../fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf') format("truetype");
+}
+
+
 

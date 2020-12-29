@@ -4,7 +4,12 @@
 class keyBuffer {
     buffer
 
-    constructor() {
+    constructor(regex) {
+        this.regex = regex
+        this.buffer = []
+    }
+
+    clear() {
         this.buffer = []
     }
 
@@ -12,23 +17,25 @@ class keyBuffer {
      * update -process keydown event
      * @param ev
      */
-    update(ev){
+    push(ev) {
         let key = ev.key
-
-        //Match alphanumeric and some special characters
-        let regex = /^[\w\s!@#$%^&*()_-]$/
-
-        if (key.match(regex)) {
+        if (key.match(this.regex)) {
             this.buffer.push(key)
+            return true
         }
-        else if(key === 'Backspace'){
-            this.buffer.pop()
-        }
-        console.log(this.toString())
+        return false
+    }
+
+    pop() {
+        this.buffer.pop()
     }
 
     toString() {
         return this.buffer.join('')
+    }
+
+    lastChar(){
+        return this.buffer[this.buffer.length-1]
     }
 }
 
