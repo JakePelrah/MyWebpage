@@ -44,9 +44,7 @@ class Terminal extends Canvas {
 
     clearLastChar(x, y) {
         this.ctx.clearRect(x, y, this.fontSize / 2, this.fontSize)
-
     }
-
 
     drawCursor(x, y) {
         this.ctx.fillRect(x, y, this.fontSize / 2, this.fontSize)
